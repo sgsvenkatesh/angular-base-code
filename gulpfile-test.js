@@ -15,6 +15,10 @@ gulp.task('build-scripts', function () {
 
 gulp.task('build-app', function () {
     return gulp.src(['app/**', 'index.html'], { base: "." }).pipe(gulp.dest('build'));
-})
+});
+
+gulp.task("watch-build", function () {
+    gulp.watch(['app/**'], ['build-app']);
+});
 
 gulp.task('build', ['build-app', 'build-scripts']);
